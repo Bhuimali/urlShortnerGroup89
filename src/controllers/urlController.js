@@ -34,7 +34,7 @@ const creatShortUrl = async (req, res) => {
         if (!longUrl) {
             return res.status(400).send({ status: false, msg: "Please provide a longUrl " })
             
-        }
+        }0
         
         if (!(/(:?^((https|http|HTTP|HTTPS){1}:\/\/)(([w]{3})[\.]{1}|)?([a-zA-Z0-9]{1,}[\.])[\w]*((\/){1}([\w@?^=%&amp;~+#-_.]+))*)$/.test(longUrl.trim()))) {
             return res.status(400).send({ status: false, msg: "Please provide a valid longUrl" })
@@ -56,7 +56,7 @@ const creatShortUrl = async (req, res) => {
 
 
         const baseUrl = 'http:localhost:3000'
-        const urlCode = shortid.generate()
+        const urlCode = shortid.generate().toLowerCase()
         const shortUrl = baseUrl + '/' + urlCode
 
         
